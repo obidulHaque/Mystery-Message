@@ -29,7 +29,7 @@ import Footer from "@/components/Footer";
 import axios from "axios";
 import { useToast } from "@/hooks/use-toast";
 
-export default function page() {
+export default function Home() {
   const { data: session } = useSession();
   const { toast } = useToast();
 
@@ -48,7 +48,7 @@ export default function page() {
       toast({
         title: response.data.message,
       });
-    } catch (error) {
+    } catch {
       toast({
         title: "User Not accpeting any message",
       });

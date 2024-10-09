@@ -2,7 +2,6 @@ import dbConnect from "@/lib/dbConnect";
 import UserModel from "@/Model/user";
 import { getServerSession } from "next-auth";
 import { authProvider } from "../auth/[...nextauth]/option";
-import { User } from "next-auth";
 
 export async function POST(request: Request) {
   await dbConnect();
@@ -52,7 +51,7 @@ export async function POST(request: Request) {
   }
 }
 
-export async function GET(request: Request) {
+export async function GET() {
   await dbConnect();
 
   const session = await getServerSession(authProvider);

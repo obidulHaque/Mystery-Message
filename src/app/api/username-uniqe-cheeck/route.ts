@@ -39,7 +39,7 @@ export async function GET(request: Request) {
       success: true,
       message: "Username id unique",
     });
-  } catch (error) {
+  } catch {
     return Response.json(
       {
         success: false,

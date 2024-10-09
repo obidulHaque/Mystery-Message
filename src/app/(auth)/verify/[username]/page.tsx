@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -48,7 +47,7 @@ export default function ProfileForm() {
         description: response.data.message,
       });
       router.replace("/sign-in");
-    } catch (error) {
+    } catch {
       toast({
         title: "verify Fail",
       });

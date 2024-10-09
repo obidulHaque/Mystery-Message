@@ -1,10 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import axios, { AxiosError } from "axios";
+import React from "react";
 import dayjs from "dayjs";
 import { X } from "lucide-react";
-import { Message } from "@/Model/user";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   AlertDialog,
@@ -18,7 +16,6 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "./ui/button";
-import { useToast } from "@/hooks/use-toast";
 
 // type MessageCardProps = {
 //   message: Message;
@@ -26,8 +23,6 @@ import { useToast } from "@/hooks/use-toast";
 // };
 
 export function MessageCard({ msg, deleteMessage }: any) {
-  const { toast } = useToast();
-
   return (
     <Card className="card-bordered max-w-xs sm:max-w-md p-2 sm:p-4">
       <CardHeader>

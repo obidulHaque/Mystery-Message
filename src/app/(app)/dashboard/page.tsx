@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { useSession } from "next-auth/react";
 import { useToast } from "@/hooks/use-toast";
 import { Switch } from "@/components/ui/switch";
@@ -14,11 +13,10 @@ import { useCallback, useState, useEffect, useMemo } from "react";
 import { Separator } from "@/components/ui/separator";
 import { Loader2, RefreshCcw } from "lucide-react";
 import apiResponse from "@/type/apiResponse";
-import dayjs from "dayjs";
 import { Msg } from "@/type/msg";
 import { MessageCard } from "@/components/messageCard";
 
-export default function Page() {
+export default function UserDashboard() {
   const [messages, setMessages] = useState<Msg[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isSwitchLoading, setIsSwitchLoading] = useState(false);
@@ -33,10 +31,10 @@ export default function Page() {
 
   const acceptMessage = watch("acceptMessage");
 
-  const profileUrl = useMemo(() => {
-    if (!session?.user) return "";
-    return `${window.location.protocol}//${window.location.host}/u/${session.user.username}`;
-  }, [session]);
+  // const profileUrl = useMemo(() => {
+  //   if (!session?.user) return "";
+  //   return `${window.location.protocol}//${window.location.host}/u/${session.user.username}`;
+  // }, [session]);
 
   const fetchMessageStatus = useCallback(async () => {
     setIsSwitchLoading(true);
@@ -44,7 +42,7 @@ export default function Page() {
       const { data } = await axios.get("/api/accept-message");
       setValue("acceptMessage", data.isAcceptingMessages);
       toast({ title: "Message status updated successfully" });
-    } catch (error) {
+    } catch {
       toast({ title: "Message status updated Fail" });
     } finally {
       setIsSwitchLoading(false);
@@ -122,24 +120,6 @@ export default function Page() {
       setIsSwitchLoading(false);
     }
   };
-
-  // const copyToClipboard = () => {
-  //   if (profileUrl) {
-  //     navigator.clipboard.writeText(profileUrl);
-  //     toast({
-  //       title: "URL Copied!",
-  //       description: "Profile URL has been copied to clipboard.",
-  //     });
-  //   }
-  // };
-
-  // if (!session?.user) {
-  //   return (
-  //     <div className="flex justify-center items-center min-h-screen text-[3vw]">
-  //       Please Login
-  //     </div>
-  //   );
-  // }
 
   return (
     <div className="lg:mx-36 lg:my-5 mx-10 my-10">

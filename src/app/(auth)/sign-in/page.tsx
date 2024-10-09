@@ -63,7 +63,7 @@ export default function SignInForm() {
       if (result?.url) {
         router.replace("/dashboard");
       }
-    } catch (error) {
+    } catch {
       toast({
         description: "signIn Fail",
         variant: "destructive",

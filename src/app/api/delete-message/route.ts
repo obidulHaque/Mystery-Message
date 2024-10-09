@@ -33,7 +33,7 @@ export async function POST(request: Request) {
       { message: "Message deleted", success: true },
       { status: 200 }
     );
-  } catch (error) {
+  } catch {
     return Response.json(
       { message: "Error deleting message", success: false },
       { status: 500 }

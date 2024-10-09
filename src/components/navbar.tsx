@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
-export default function navbar() {
+export default function Navbar() {
   const { data: session } = useSession();
   return (
     <div className="flex justify-between mx-10 lg:my-5 my-10">

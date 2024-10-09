@@ -23,7 +23,7 @@ import { useDebounceCallback } from "usehooks-ts";
 import apiResponse from "@/type/apiResponse";
 import { useRouter } from "next/navigation";
 
-export default function signUp() {
+export default function SignUp() {
   const [username, setUsername] = useState("");
   const [usernameResponse, setUsernameResaponse] = useState("");
   const debounced = useDebounceCallback(setUsername, 500);
@@ -70,7 +70,7 @@ export default function signUp() {
         description: response.data.message,
       });
       router.replace(`verify/${username}`);
-    } catch (error) {
+    } catch {
       console.log("axios problem");
 
       toast({
