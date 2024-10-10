@@ -91,7 +91,7 @@ export default function Home() {
                 <FormLabel>Message</FormLabel>
                 <Input
                   {...field}
-                  className="rounded-xl h-[10vw] lg:w-[30vw] w-[70vw] resize-none"
+                  className="rounded-xl lg:h-[10vw] h-[25vw] lg:w-[30vw] w-[70vw] resize-none"
                 />
                 <FormMessage />
               </FormItem>
@@ -102,7 +102,7 @@ export default function Home() {
           </Button>
         </form>
       </Form>
-      <div className="flex justify-center items-center lg:mt-10 mt-20">
+      <div className="flex justify-center items-center lg:mt-10 mt-24">
         <Carousel
           orientation="vertical"
           plugins={[
