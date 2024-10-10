@@ -102,7 +102,7 @@ export default function Home() {
           </Button>
         </form>
       </Form>
-      <div className="flex justify-center items-center lg:mt-10 mt-24">
+      <div className="flex justify-center items-center lg:mt-10 mt-16">
         <Carousel
           orientation="vertical"
           plugins={[

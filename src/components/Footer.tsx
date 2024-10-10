@@ -7,7 +7,7 @@ function Footer() {
       <div className="flex justify-center items-center lg:mt-[9vw] mt-[40vw]">
         <Image src="/image.png" alt="x" width={1000} height={100} />
       </div>
-      <div className="relative  w-full h-[60vh] text-white dark:text-black flex px-10 py-10 lg:h-screen mt-24">
+      <div className="relative  w-full h-[30vh] text-white dark:text-black flex px-10 py-10 lg:h-screen mt-24">
         <div className="w-1/2   ">
           {/* <div className='text-[6vw] leading-[6vw] -tracking-[0.1em] font-["Segoe UI Symbol"]'>
             <p>EYE-</p>
@@ -18,7 +18,7 @@ function Footer() {
           </div>
         </div>
         <div className="w-1/2 px-10 py-8 relative ">
-          <div className="">
+          <div className=" absolute -top-[70%] left-[3%] lg:top-[20%]  ">
             {/* <p className='text-[6vw] leading-[2vw]  font-["Segoe UI Symbol"] -tracking-[0.1em]'>
               PRESENTATIONS
             </p> */}
@@ -59,7 +59,7 @@ function Footer() {
                 alt="my photo"
                 width={100}
                 height={100}
-                className="rounded-full lg:w-[2.5vw] w-[3vw] overflow-hidden"
+                className="rounded-full lg:w-[2.5vw] w-[2vw] overflow-hidden"
               />
             </p>
           </div>
