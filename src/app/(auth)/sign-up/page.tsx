@@ -69,7 +69,7 @@ export default function SignUp() {
         title: "SignUp successfully done...",
         description: response.data.message,
       });
-      router.replace(`verify/${username}`);
+      router.replace("/sign-in");
     } catch {
       console.log("axios problem");
 
